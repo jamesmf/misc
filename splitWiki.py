@@ -9,18 +9,26 @@ storedPage  = ""
 title       = ""
 inContent   = ""
 
-with open("../../../../prod/peryeata/wiki/enwiki-20150403-pages-meta-current.xml",'rb') as f:
-    for line in f:
-        if line.find("<text") > -1:
-            inContent   = True
-        if inContent:
-            storedPage  += line
-        if line.find("<title>") > -1:
-            title   = line[line.find("title")+6:line.find("</title")]
-        if line.find("</text") > -1:
-            print title
-            print storedPage
-            stop    = raw_input("")
-            inContent   = ""
-            title       = ""
-            storedPage  = ""
+with open("../../../../prod/peryeata/wiki/wikiStripped.txt",'wb') as f2:
+    with open("../../../../prod/peryeata/wiki/enwiki-20150403-pages-meta-current.xml",'rb') as f:
+        for line in f:
+            if line.find("<text") > -1:
+                inContent   = True
+            if inContent:
+                storedPage  += line
+            if line.find("<title>") > -1:
+                title   = line[line.find("title")+6:line.find("</title")]
+            if line.find("</text") > -1:
+                print title
+                print storedPage
+                stop    = raw_input("")
+                inContent   = ""
+                title       = ""
+                storedPage  = ""
+            
+            storedPage  = storedPage.replace("\n","\t!\t")
+            f2.write(title+"\t\t\t"+storedPage)
+            
+        if stop == "stop":
+            break
+        
