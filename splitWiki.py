@@ -19,7 +19,7 @@ with open("../wikiStripped.txt",'wb') as f2:
             if line.find("<title>") > -1:
                 title   = line[line.find("title")+6:line.find("</title")]
             if line.find("</text") > -1:
-                if title.find("talk:") == -1:
+                if title.find("Talk:") == -1:
                     print title
                     print storedPage
                     stop    = raw_input("")
