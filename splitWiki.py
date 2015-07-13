@@ -20,15 +20,13 @@ with open("../wikiStripped.txt",'wb') as f2:
                 title   = line[line.find("title")+6:line.find("</title")]
             if line.find("</text") > -1:
                 if title.find("Talk:") == -1:
-                    print title
-                    print storedPage
-                    stop    = raw_input("")
+#                    print title
+#                    print storedPage
                     storedPage  = storedPage.replace("\n","\t!\t")
                     f2.write(title+"\t\t\t"+storedPage)                
                 inContent   = ""
                 title       = ""
                 storedPage  = ""
-                if stop == "stop":
-                    break
+
             
             
