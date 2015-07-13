@@ -29,6 +29,6 @@ with open("../wikiStripped.txt",'wb') as f2:
             storedPage  = storedPage.replace("\n","\t!\t")
             f2.write(title+"\t\t\t"+storedPage)
             
-        if stop == "stop":
-            break
-        
+            if stop == "stop":
+                break
+            
