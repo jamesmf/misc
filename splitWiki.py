@@ -25,10 +25,10 @@ with open("../wikiStripped.txt",'wb') as f2:
                     stop    = raw_input("")
                     storedPage  = storedPage.replace("\n","\t!\t")
                     f2.write(title+"\t\t\t"+storedPage)                
-                    inContent   = ""
-                    title       = ""
-                    storedPage  = ""
-                    if stop == "stop":
-                        break
+                inContent   = ""
+                title       = ""
+                storedPage  = ""
+                if stop == "stop":
+                    break
             
             
