@@ -7,6 +7,7 @@ Created on Mon Jul 13 15:38:39 2015
 
 storedPage  = ""
 title       = ""
+inContent   = ""
 
 with open("../../../../prod/peryeata/wiki/enwiki-20150403-pages-meta-current.xml",'rb') as f:
     for line in f:
