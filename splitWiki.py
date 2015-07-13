@@ -9,8 +9,8 @@ storedPage  = ""
 title       = ""
 inContent   = ""
 
-with open("wikiStripped.txt",'wb') as f2:
-    with open("enwiki-20150403-pages-meta-current.xml",'rb') as f:
+with open("../wikiStripped.txt",'wb') as f2:
+    with open("../enwiki-20150403-pages-meta-current.xml",'rb') as f:
         for line in f:
             if line.find("<text") > -1:
                 inContent   = True
