@@ -23,7 +23,7 @@ with open("../wikiStripped.txt",'wb') as f2:
 #                    print title
 #                    print storedPage
                     storedPage  = storedPage.replace("\n","\t!\t")
-                    f2.write(title+"\t\t\t"+storedPage)                
+                    f2.write(title+"\t\t\t"+storedPage+"\n")                
                 inContent   = ""
                 title       = ""
                 storedPage  = ""
